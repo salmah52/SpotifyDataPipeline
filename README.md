@@ -15,16 +15,31 @@ Architecture
 ---
 Technology Used
 
-Programming Language - Python
+1. Programming Language - Python
 
-Google Cloud Platform
+2. Google Cloud Platform
 
-1. Google Cloud Functions
-2. Google Cloud Storage
-3. Google BigQuery
-4. Cloud Scheduler
+- Google Cloud Functions
+- Google Cloud Storage
+- Google BigQuery
+-  Cloud Scheduler
 
-Data Visulisation - Power BI
+3. Data Visulisation - Power BI
 
 ---
-![image](https://github.com/salmah52/SpotifyDataPipeline/assets/44398948/40a729f8-c33b-4fc1-8bc2-ac114def7820)
+## Technology Used
+
+**Programming Language**
+- Python
+
+**Cloud Platform**
+- Google Cloud Platform (GCP)
+
+**Data Visualization**
+- Power BI
+
+**GCP Services**
+- Google Cloud Functions
+- Google Cloud Storage
+- Google BigQuery
+- Cloud Scheduler
