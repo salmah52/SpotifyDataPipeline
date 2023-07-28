@@ -16,7 +16,6 @@ The project consists of several components, including data extraction, transform
 
 ---
 ## Technology Used
-
 **Programming Language**
 - Python
 
