@@ -9,7 +9,8 @@ The project consists of several components, including data extraction, transform
 ---
 Architecture
 
-<img width="551" alt="image" src="https://github.com/salmah52/SpotifyDataPipeline/assets/44398948/5c48294e-e06e-4cc9-9d8f-ea9d5a94452a">
+![image](https://github.com/salmah52/SpotifyDataPipeline/assets/44398948/fd2ae5ff-75cd-4bde-b8f3-5b9a6b836069)
+
 
 ---
 Technology Used
