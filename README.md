@@ -41,4 +41,15 @@ The project consists of several components, including data extraction, transform
 
 5. Data Visualization and Analytics - Visualization Tool: Power BI
 
+---
+## Project Structure
+The project is organized into several components:
+
+1. Extraction from Spotify API (Code in spotify_api_data.py): This script uses the Spotify API to extract data from a specific playlist and stores the raw data as JSON files in the "raw_data_unprocessed" bucket in Google Cloud Storage. The code is deployed as a Google Cloud Function and triggered using Cloud Scheduler on a daily basis.
+
+2. Data Transformation (Code in spotify_api_loaddata.py): This script reads the raw data files from the "raw_data_unprocessed" bucket, performs data transformation, and creates three separate CSV files for albums, artists, and songs. The transformed data is then stored in the "transformed_data" bucket in Google Cloud Storage.
+
+3. Data Movement and Cleanup (Code in spotify_api_loaddata.py): This Cloud Function is triggered whenever new data is uploaded to the "raw_data_unprocessed" bucket. It automatically moves the newly uploaded raw data files to their respective folders ("album_data", "artist_data", "songs_data") in the "transformed_data" bucket. After the data movement is complete, the original raw data files are deleted from the "raw_data_unprocessed" bucket to avoid duplicate processing.
+
+4. Loading Data into BigQuery (Code in spotify_api_loaddata.py): Once the data is transformed and stored in the "transformed_data" bucket, it is further loaded into Google BigQuery for data analysis. The code creates three tables for albums, artists, and songs in the "Spotify009" dataset in BigQuery. The data is appended to these tables on each run to maintain a complete historical record.
 
