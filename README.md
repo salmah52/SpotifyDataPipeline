@@ -11,3 +11,17 @@ Architecture
 
 <img width="551" alt="image" src="https://github.com/salmah52/SpotifyDataPipeline/assets/44398948/5c48294e-e06e-4cc9-9d8f-ea9d5a94452a">
 
+Technology Used
+
+Programming Language - Python
+
+Google Cloud Platform
+
+1. Google Cloud Functions
+2. Google Cloud Storage
+3. Google BigQuery
+4. Cloud Scheduler
+
+Data Visulisation - Power BI
+
+
