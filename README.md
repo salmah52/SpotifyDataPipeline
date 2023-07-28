@@ -27,20 +27,6 @@ The project consists of several components, including data extraction, transform
 
 **Data Visualization**
 - Power BI
-
----
-## Project Components
-
-1. Extraction from Spotify API: A Google Cloud Function is deployed to interact with the Spotify API and extract data from a predefined playlist. The extracted data is stored as JSON files in the "raw_data_unprocessed" bucket in Google Cloud Storage.
-
-2. Data Transformation: Another Google Cloud Function is responsible for reading the raw data, performing data transformation, and creating separate CSV files for albums, artists, and songs. The transformed data is stored in the "transformed_data" bucket.
-
-3. Data Movement and Cleanup: After the data is transformed, it is automatically moved to its respective folders in the "transformed_data" bucket for better organization. The original raw data files are then deleted to prevent duplication.
-
-4. Loading Data into BigQuery: The transformed data in the "transformed_data" bucket is loaded into Google BigQuery, creating three separate tables for albums, artists, and songs.
-
-5. Data Visualization and Analytics - Visualization Tool: Power BI
-
 ---
 ## Project Structure
 The project is organized into several components:
@@ -52,4 +38,18 @@ The project is organized into several components:
 3. Data Movement and Cleanup (Code in spotify_api_loaddata.py): This Cloud Function is triggered whenever new data is uploaded to the "raw_data_unprocessed" bucket. It automatically moves the newly uploaded raw data files to their respective folders ("album_data", "artist_data", "songs_data") in the "transformed_data" bucket. After the data movement is complete, the original raw data files are deleted from the "raw_data_unprocessed" bucket to avoid duplicate processing.
 
 4. Loading Data into BigQuery (Code in spotify_api_loaddata.py): Once the data is transformed and stored in the "transformed_data" bucket, it is further loaded into Google BigQuery for data analysis. The code creates three tables for albums, artists, and songs in the "Spotify009" dataset in BigQuery. The data is appended to these tables on each run to maintain a complete historical record.
+
+---
+## Automated Pipeline
+The entire data pipeline is designed to be automated and scheduled to run daily. The Google Cloud Function responsible for data extraction is triggered by Cloud Scheduler on a daily basis. This ensures that the latest data from the Spotify API is fetched regularly.
+
+Upon successful extraction, the transformation process is triggered automatically for the newly uploaded data. The transformed data is then moved to their respective folders, and the raw data is removed to keep the data clean and organized.
+
+Finally, the data is loaded into Google BigQuery, providing a centralized and scalable database for performing data analytics and generating insights.
+---
+## Conclusion
+
+By implementing this fully automated data pipeline, we ensure that new data from the Spotify API is efficiently processed and made available for analysis. This project showcases the power and versatility of Google Cloud Platform in building robust and automated data engineering solutions.
+
+*Happy data engineering!*
 
