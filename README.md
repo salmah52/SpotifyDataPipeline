@@ -46,6 +46,7 @@ The entire data pipeline is designed to be automated and scheduled to run daily.
 Upon successful extraction, the transformation process is triggered automatically for the newly uploaded data. The transformed data is then moved to their respective folders, and the raw data is removed to keep the data clean and organized.
 
 Finally, the data is loaded into Google BigQuery, providing a centralized and scalable database for performing data analytics and generating insights.
+
 ---
 ## Conclusion
 
