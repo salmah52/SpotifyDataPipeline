@@ -26,3 +26,4 @@ Google Cloud Platform
 Data Visulisation - Power BI
 
 ---
+![image](https://github.com/salmah52/SpotifyDataPipeline/assets/44398948/40a729f8-c33b-4fc1-8bc2-ac114def7820)
